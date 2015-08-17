@@ -4,14 +4,15 @@
 <head>
     <title>Print Task Cards</title>
     <meta name="Name" content="App: Print Task Cards"/>
-    <meta name="Version" content="2012.02.21"/>
+    <meta name="Version" content="2015.08.17"/>
     <meta name="Vendor" content="Rally Software"/>
     <script type="text/javascript" src="/apps/1.33/sdk.js?apiVersion=1.29"></script>
 
     <script type="text/javascript">
-    var MAX_NAME_LEN = 115;
-        var APP_TYPE = "Task";
-        var CARD_TYPE = "tasks";
+        var MAX_NAME_LEN            = 115,
+            APP_TYPE                = "Task",
+            CARD_TYPE               = "tasks",
+            NUMBER_CARDS_PER_PAGE   = 9;
         
         function PrintTaskCards(rallyDataSource) {
             var iterationDropdown;
@@ -105,7 +106,7 @@
                                 '<span class="estimate">' + estimate + '</span>' +
                                 '</div>';
         
-                if ((cardNum + 1) % 2 === 0) {
+                if ((cardNum + 1) % NUMBER_CARDS_PER_PAGE === 0) {
                     theMarkup = theMarkup + '<div class=pb></div>';
                 } else if (cardNum === totalCards - 1) {
                     theMarkup = theMarkup + '<div class=cb>&nbsp;</div>';
@@ -236,11 +237,11 @@
             background-color: #fff;
             border: 2px solid #000;
             float: left;
-            height: 3.2in;
+            height: 2.0in;
             margin: 0.1in 0.1in 0.1in 0.1in;
             position: relative;
             overflow: hidden;
-            width: 4.3in;
+            width: 3.0in;
         }
 
         .header {
@@ -250,7 +251,7 @@
             font-size: 18px;
             height: 40px;
             vertical-align: middle;
-            width: 4.3in;
+            width: 2.8in;
         }
 
         .card-title {
@@ -296,9 +297,9 @@
         }
 
         .content {
-            height: 2.4in;
+            height: 2.0in;
             overflow: hidden;
-            width: 4.3in;
+            width: 2.8in;
         }
 
     </style>
